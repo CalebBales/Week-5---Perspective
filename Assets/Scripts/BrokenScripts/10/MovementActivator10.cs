@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MovementActivator10 : MonoBehaviour
 {
+    // Added the serializefield so I could attach objects
     [SerializeField] GameObject objectToActivate;
-    GameObject otherObjectToActivate;
+    [SerializeField] GameObject otherObjectToActivate;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,14 @@ public class MovementActivator10 : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+    // Had to replace MoveObject9 with MoveObject10 so I was actually refering to the components in the scene
     {
-        objectToActivate.GetComponent<MoveObject9>().enabled = true;
-        otherObjectToActivate.GetComponent<MoveObject9>().enabled = true;
+        objectToActivate.GetComponent<MoveObject10>().enabled = true;
+        otherObjectToActivate.GetComponent<MoveObject10>().enabled = true;
     }
     private void OnTriggerExit(Collider other)
     {
-        objectToActivate.GetComponent<MoveObject9>().enabled = true;
-        otherObjectToActivate.GetComponent<MoveObject9>().enabled = true;
+        objectToActivate.GetComponent<MoveObject10>().enabled = true;
+        otherObjectToActivate.GetComponent<MoveObject10>().enabled = true;
     }
 }
